@@ -1,7 +1,6 @@
-
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './src/views/Screens/Home.js';
 import Login from './src/views/Screens/Login.js';
 
@@ -15,15 +14,14 @@ function App() {
         screenOptions={{
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: '#0080ff'
+            backgroundColor: '#0080ff',
           },
           headerTintColor: '#ffffff',
           headerTitleStyle: {
             fontSize: 25,
-            fontWeight: 'bold'
-          }
-        }}
-      >
+            fontWeight: 'bold',
+          },
+        }}>
         <Stack.Screen
           name="Login"
           component={Login}
@@ -31,13 +29,10 @@ function App() {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="Home"
-          component={Home}
-        />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 }
 
 export default App;
