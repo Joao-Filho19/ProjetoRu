@@ -15,7 +15,7 @@ import style from '../../components/Estilo/globalStyle.js';
 import Botao_cadastro from '../../components/BotaoCadastro/index.js';
 import Style from './style.js';
 import NetInfo from '@react-native-community/netinfo';
-import { Image } from 'react-native';
+import {Image} from 'react-native';
 // import Pai from "./components/direta/Pai";
 // import Contador from "./components/Contador";
 // import Botao from "./components/Botao";
@@ -116,22 +116,23 @@ export default props => {
 
       <Text style={style.label}>Senha*</Text>
       <View style={Style.inputContainer}>
-      <Controller
-        control={control}
-        name="password"
-        render={({field: {onChange, onBlur, value}}) => (
-          <TextInput
-            style={Style.input}
-            onChangeText={onChange}
-            onBlur={onBlur}
-            value={value}
-            placeholder="***************"
-            
-          />
-          
-        )}
-      />
-      <Image source={require('../../assets/teste/lock.png')} style={Style.icon} />
+        <Controller
+          control={control}
+          name="password"
+          render={({field: {onChange, onBlur, value}}) => (
+            <TextInput
+              style={Style.input}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              value={value}
+              placeholder="***************"
+            />
+          )}
+        />
+        <Image
+          source={require('../../assets/teste/lock.png')}
+          style={Style.icon}
+        />
       </View>
       {errors.password && (
         <Text style={style.labelError}>{errors.password?.message}</Text>
@@ -139,21 +140,24 @@ export default props => {
 
       <Text style={style.label}>Confirmar Senha*</Text>
       <View style={Style.inputContainer}>
-      <Controller
-        control={control}
-        name="confirm_password"
-        render={({field: {onChange, onBlur, value}}) => (
-          <TextInput
-            style={Style.input}
-            onChangeText={onChange}
-            onBlur={onBlur}
-            value={value}
-            placeholder="****************"
-            secureTextEntry={true}
-          />
-        )}
-      />
-      <Image source={require('../../assets/teste/lock.png')} style={Style.icon} />
+        <Controller
+          control={control}
+          name="confirm_password"
+          render={({field: {onChange, onBlur, value}}) => (
+            <TextInput
+              style={Style.input}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              value={value}
+              placeholder="****************"
+              secureTextEntry={true}
+            />
+          )}
+        />
+        <Image
+          source={require('../../assets/teste/lock.png')}
+          style={Style.icon}
+        />
       </View>
       {errors.confirm_password && (
         <Text style={style.labelError}>{errors.confirm_password?.message}</Text>
@@ -163,7 +167,8 @@ export default props => {
         style={style.button}
         {...props}
         avancar="RedefinirSenha"
-        onPress={handleSubmit(handleSignIn)}></Botao_cadastro>
+        onPress={handleSubmit(handleSignIn)}
+      />
 
       {/*
         <Pai/>
