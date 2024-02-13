@@ -17,30 +17,33 @@ export default props => (
       // headerTitle: 'Cadastre-se',
       // headerTitleStyle: style.titleCadastro,
     }}>
-
-    <Stack.Screen name="Cadastro" component={Cadastro}
+    <Stack.Screen
+      name="Cadastro"
+      component={Cadastro}
       options={{
-      headerShown: true,
-      headerTitle: 'Cadastre-se',
-      headerTitleStyle: style.titleCadastro,
-    }}/>
-    <Stack.Screen name="RedefinirSenha" component={RedefinirSenha}
+        headerShown: true,
+        headerTitle: 'Cadastre-se',
+        headerTitleStyle: style.titleCadastro,
+      }}
+    />
+    <Stack.Screen
+      name="RedefinirSenha"
+      component={RedefinirSenha}
       options={{
-      headerShown: true,
-      headerTitle: 'Criar nova senha',
-      headerTitleStyle: style.titleCadastro,
-    }}
+        headerShown: true,
+        headerTitle: 'Criar nova senha',
+        headerTitleStyle: style.titleCadastro,
+      }}
     />
     <Stack.Screen name="Login" component={Login} />
     <Stack.Screen
       name="RecuperarSenha"
       component={RecuperarSenha}
       options={{
-      headerShown: true,
-      headerTitle: 'Recuperar Senha',
-      headerTitleStyle: style.titleCadastro,
-    }}
-/>
-
+        headerShown: true,
+        headerTitle: 'Recuperar Senha',
+        headerTitleStyle: style.titleCadastro,
+      }}
+    />
   </Stack.Navigator>
 );
