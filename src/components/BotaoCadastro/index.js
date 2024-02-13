@@ -1,6 +1,6 @@
 import React  from 'react'
 import { Button, TouchableOpacity, View, Text } from 'react-native'
-import style from '../Estilo/Style'
+import style from '../Estilo/globalStyle'
 import { StyleSheet } from 'react-native'
 export default props => (
     <View style={{flex:1}}>

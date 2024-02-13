@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import {useForm, Controller} from 'react-hook-form'
 import * as yup from 'yup'
 import Botao_cadastro from "../../components/BotaoCadastro";
-import style from "../../components/Estilo/Style";
+import style from "../../components/Estilo/globalStyle";
 // import Pai from "./components/direta/Pai";
 // import Contador from "./components/Contador";
 // import Botao from "./components/Botao";
