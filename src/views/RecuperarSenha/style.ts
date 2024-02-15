@@ -12,7 +12,8 @@ export default StyleSheet.create({
     color: '#827F7F',
   },
   campTex: {
-    width: '85%',
+    width: '95%',
+    paddingTop: 10,
   },
   label: {
     marginBottom: 5,
@@ -24,12 +25,11 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   botaoEnviar: {
-    marginTop: 70,
+    marginTop: 55,
   },
   barraProgress: {
     alignItems: 'flex-start',
     paddingStart: 30,
-    paddingTop: 10,
     backgroundColor: '#fff',
   },
 });

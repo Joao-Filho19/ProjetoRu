@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   TextInput,
   TouchableOpacity,
   Alert,
@@ -11,15 +10,9 @@ import {
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useForm, Controller} from 'react-hook-form';
 import * as yup from 'yup';
-import Botao_cadastro from '../../components/BotaoCadastro';
 import style from '../../components/Estilo/globalStyle';
-
-const progressBarLength = 150; // comprimento da barra
-const progressBarThickness = 6; // espessura da barra
-const progress = 1; // porcentagem de preenchimento Somente valores entre 0 e 1
-
-// Calculo da largura com base no progresso
-const progressBarWidth = progress * progressBarLength;
+import BarraProgresso from '../../components/BarraProgresso';
+import Botao from '../../components/Botao';
 
 const schema = yup.object({
   email: yup.string().required('Informe o seu email'),
@@ -44,57 +37,63 @@ export default props => {
   }
 
   return (
-    <SafeAreaView style={style.container}>
-      <Text style={style.subtitle}>
-        Sua nova senha deve ser diferente da senha anterior que voce usou.
-      </Text>
-      <Text style={style.label}>Nova Senha*</Text>
-      <Controller
-        control={control}
-        name="email"
-        render={({field: {onChange, onBlur, value}}) => (
-          <TextInput
-            style={style.input}
-            onChangeText={onChange}
-            onBlur={onBlur}
-            value={value}
-            placeholder="Digite seu email"
-          />
+    <>
+      <BarraProgresso progresso={1} />
+      <View style={style.barraProgress}>
+        <View style={style.campTex}>
+          <Text style={style.texto}>
+            Sua nova senha deve ser diferente da senha anterior que voce usou.
+          </Text>
+        </View>
+      </View>
+      <SafeAreaView style={style.container}>
+        <Text style={style.label}>Nova Senha*</Text>
+        <Controller
+          control={control}
+          name="email"
+          render={({field: {onChange, onBlur, value}}) => (
+            <TextInput
+              style={style.input2}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              value={value}
+              placeholder="Digite sua nova senha"
+            />
+          )}
+        />
+        {errors.email && (
+          <Text style={style.labelError}>{errors.email?.message}</Text>
         )}
-      />
-      {errors.email && (
-        <Text style={style.labelError}>{errors.email?.message}</Text>
-      )}
 
-      {errors.password && (
-        <Text style={style.labelError}>{errors.password?.message}</Text>
-      )}
-
-      <Text style={style.label}>Confirmar Senha*</Text>
-      <Controller
-        control={control}
-        name="confirm_password"
-        render={({field: {onChange, onBlur, value}}) => (
-          <TextInput
-            style={style.input}
-            onChangeText={onChange}
-            onBlur={onBlur}
-            value={value}
-            placeholder="********"
-            secureTextEntry={true}
-          />
+        {errors.password && (
+          <Text style={style.labelError}>{errors.password?.message}</Text>
         )}
-      />
-      {errors.confirm_password && (
-        <Text style={style.labelError}>{errors.confirm_password?.message}</Text>
-      )}
 
-      <Botao_cadastro
-        style={style.button}
-        {...props}
-        avancar="Login"
-        onPress={handleSubmit(handleSignIn)}
-      />
-    </SafeAreaView>
+        <Text style={style.label}>Confirmar Senha*</Text>
+        <Controller
+          control={control}
+          name="confirm_password"
+          render={({field: {onChange, onBlur, value}}) => (
+            <TextInput
+              style={style.input2}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              value={value}
+              placeholder="********"
+              secureTextEntry={true}
+            />
+          )}
+        />
+        {errors.confirm_password && (
+          <Text style={style.labelError}>
+            {errors.confirm_password?.message}
+          </Text>
+        )}
+
+        <View style={style.botao}>
+          <Botao page="Login" label="Redefinir Senha" />
+        </View>
+      </SafeAreaView>
+    </>
   );
 };
