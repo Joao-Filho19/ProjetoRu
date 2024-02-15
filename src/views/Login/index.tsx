@@ -52,7 +52,7 @@ export default function Login() {
         </View>
 
         <View>
-          <Botao page="Details" label="Entrar" />
+          <Botao page="Perfil" label="Entrar" />
 
           <View style={Style.textJunto}>
             <Text style={Style.fontNormal}>Não tem uma conta? </Text>

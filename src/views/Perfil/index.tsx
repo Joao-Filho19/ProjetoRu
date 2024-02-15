@@ -90,6 +90,10 @@ export default function Perfil() {
           <View style={styles.modalContent}>
             <TouchableOpacity style={styles.menuButton} onPress={toggleMenu}>
               <View style={styles.menuItemContainer}>
+                {/* <ImageBackground
+                  source={require('../../assets/img/edit.png')}
+                  style={{width: 20, height: 20, marginRight: 10}}
+                /> */}
                 <ImageBackground
                   source={require('../../assets/img/edit.png')}
                   style={{width: 20, height: 20, marginRight: 10}}
