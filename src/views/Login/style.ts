@@ -19,7 +19,7 @@ export default StyleSheet.create({
   imgLogo: {
     height: 87,
     width: 90,
-    resizeMode: 'cover',
+    resizeMode: 'contain',
   },
   botao: {
     backgroundColor: '#37A433',
