@@ -43,7 +43,7 @@ export default StyleSheet.create({
     alignItems: 'left',
     backgroundColor: '#ffffff',
     paddingHorizontal: 18,
-    paddingHorizontal: 30,
+    // paddingHorizontal: 30,
   },
   title: {
     fontSize: 34,
@@ -106,7 +106,7 @@ export default StyleSheet.create({
   input2: {
     width: 320,
     borderWidth: 0.2,
-    borderRadius: 5,
+    borderRadius: 2,
     borderColor: '#827F7F',
     borderStyle: 'solid',
     backgroundColor: 'white',

@@ -9,7 +9,9 @@ import Perfil from '../views/Perfil';
 import CodRecuperacao from '../views/CodRecuperacao';
 import VerificacaoEmail from '../views/VerificarEmail';
 import Cardapio from '../views/Cardapio';
-// import ListaCont from '../views/ListaContatos'
+import UploadCarteira from '../views/UploadCarteira';
+import Carteira from '../views/Carteira';
+import {Image, TouchableOpacity} from 'react-native';
 // import Screens from '../views/Screens'
 const Stack = createNativeStackNavigator();
 
@@ -64,6 +66,35 @@ export default props => (
         headerShown: true,
         headerTitle: 'Verifique seu email',
         headerTitleStyle: style.titleCadastro,
+      }}
+    />
+    <Stack.Screen
+      name="UploadCarteira"
+      component={UploadCarteira}
+      options={{
+        headerShown: true,
+        headerTitle: 'Carteira do Estudante',
+        headerTitleStyle: style.titleCadastro,
+      }}
+    />
+    <Stack.Screen
+      name="Carteira"
+      component={Carteira}
+      options={{
+        headerShown: true,
+        headerTitle: 'Carteira do Estudante',
+        headerTitleStyle: style.titleCadastro,
+        headerRight: () => (
+          <TouchableOpacity
+            onPress={() => {
+              // Adicione aqui a ação que deseja realizar ao pressionar o ícone do menu
+            }}>
+            <Image
+              source={require('../assets/img/p.png')}
+              style={{width: 24, height: 24, marginRight: 15}}
+            />
+          </TouchableOpacity>
+        ),
       }}
     />
     <Stack.Screen name="Cardapio" component={Cardapio} />
