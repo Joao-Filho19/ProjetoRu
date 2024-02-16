@@ -9,12 +9,26 @@ import {
   Modal,
   Pressable,
   Alert,
+  Linking,
 } from 'react-native';
 import {styles} from './style';
 import userProfileData from '../../bd/Bd.json';
 import {Drawer} from 'react-native-drawer-layout';
+import BotaoDoIcon from '../../components/BotaoIcon';
+import {useNavigation} from '@react-navigation/native';
 
 export default function Cardapio() {
+  const handlePress = async () => {
+    const email = 'mailto:skdp.ecp19@uea.edu.br';
+
+    try {
+      await Linking.openURL(email);
+    } catch (error) {
+      console.log('Erro ao abrir o aplicativo de e-mail:', error);
+    }
+  };
+
+  const navigation = useNavigation();
   const [searchText, setSearchText] = useState('');
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedSquare, setSelectedSquare] = useState<number | null>(null);
@@ -136,10 +150,16 @@ export default function Cardapio() {
                 source={require('../../assets/img/cardapioBlack.png')}
                 style={{width: 25, height: 25, marginRight: 10}}
               />
-              <Text style={styles.drawerMenuItemText}>Cardápio</Text>
+              <Text style={(styles.drawerMenuItemText, styles.botaoSelect)}>
+                Cardápio
+              </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.drawerMenuItem} onPress={() => {}}>
+            <TouchableOpacity
+              style={styles.drawerMenuItem}
+              onPress={() => {
+                navigation.navigate('Carteira');
+              }}>
               <ImageBackground
                 source={require('../../assets/img/carteiraBlack.png')}
                 style={{width: 25, height: 25, marginRight: 10}}
@@ -147,7 +167,9 @@ export default function Cardapio() {
               <Text style={styles.drawerMenuItemText}>Carteira</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.drawerMenuItem} onPress={() => {}}>
+            <TouchableOpacity
+              style={styles.drawerMenuItem}
+              onPress={handlePress}>
               <ImageBackground
                 source={require('../../assets/img/envelope.png')}
                 style={{width: 25, height: 25, marginRight: 10}}
@@ -155,7 +177,11 @@ export default function Cardapio() {
               <Text style={styles.drawerMenuItemText}>Fale Conosco</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.drawerMenuItem} onPress={() => {}}>
+            <TouchableOpacity
+              style={styles.drawerMenuItem}
+              onPress={() => {
+                navigation.navigate('Perfil');
+              }}>
               <ImageBackground
                 source={require('../../assets/img/iconPerfil.png')}
                 style={{width: 25, height: 25, marginRight: 10}}
@@ -163,15 +189,19 @@ export default function Cardapio() {
               <Text style={styles.drawerMenuItemText}>Perfil</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.drawerMenuItem} onPress={() => {}}>
+            {/* <TouchableOpacity style={styles.drawerMenuItem} onPress={() => {}}>
               <ImageBackground
                 source={require('../../assets/img/config.png')}
                 style={{width: 25, height: 25, marginRight: 10}}
               />
               <Text style={styles.drawerMenuItemText}>Config</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
-            <TouchableOpacity style={styles.drawerMenuItem} onPress={() => {}}>
+            <TouchableOpacity
+              style={styles.drawerMenuItem}
+              onPress={() => {
+                navigation.navigate('Login');
+              }}>
               <ImageBackground
                 source={require('../../assets/img/sair.png')}
                 style={{width: 25, height: 25, marginRight: 10}}
@@ -310,34 +340,28 @@ export default function Cardapio() {
         </Modal>
 
         <View style={styles.bottomIconsContainer}>
-          <View style={styles.bottomIconContainer}>
-            <TouchableOpacity onPress={() => {}}>
-              <Image
-                source={require('../../assets/img/cardapio.png')}
-                style={styles.bottomIcon}
-              />
-            </TouchableOpacity>
-            <Text style={styles.textIcons}>Cardápio</Text>
+          <View style={styles.bottombarSelect}>
+            <BotaoDoIcon
+              texto="Cardapio"
+              page="Cardapio"
+              imgIcon={require('../../assets/img/cardapio.png')}
+            />
           </View>
 
           <View style={styles.bottomIconContainer}>
-            <TouchableOpacity onPress={() => {}}>
-              <Image
-                source={require('../../assets/img/id.png')}
-                style={styles.bottomIcon}
-              />
-            </TouchableOpacity>
-            <Text style={styles.textIcons}>Carteira</Text>
+            <BotaoDoIcon
+              texto="Carteira"
+              page="UploadCarteira"
+              imgIcon={require('../../assets/img/id.png')}
+            />
           </View>
 
           <View style={styles.bottomIconContainer}>
-            <TouchableOpacity onPress={() => {}}>
-              <Image
-                source={require('../../assets/img/iconPerfil.png')}
-                style={styles.bottomIcon}
-              />
-            </TouchableOpacity>
-            <Text style={styles.textIcons}>Perfil</Text>
+            <BotaoDoIcon
+              texto="Perfil"
+              page="Perfil"
+              imgIcon={require('../../assets/img/iconPerfil.png')}
+            />
           </View>
         </View>
       </View>

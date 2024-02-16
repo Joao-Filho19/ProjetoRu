@@ -123,8 +123,8 @@ export const styles = StyleSheet.create({
     marginBottom: 5, // Adicionar margem inferior
   },
   bottomIcon: {
-    width: 35, // Ajuste conforme necessário
-    height: 35, // Ajuste conforme necessário
+    width: 30, // Ajuste conforme necessário
+    height: 30, // Ajuste conforme necessário
   },
   textIcons: {
     fontSize: 12,
@@ -156,7 +156,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
-    width: '80%', // Ajuste conforme necessário para o tamanho desejado
+    width: '80%',
   },
   closeButton: {
     position: 'absolute',
@@ -175,7 +175,7 @@ export const styles = StyleSheet.create({
     borderRadius: 18,
     padding: 8,
     margin: 5,
-    width: '90%', // Largura fixa para todos os botões serem do mesmo tamanho
+    width: '90%',
     backgroundColor: 'rgba(0, 159, 16, 0.08)',
     color: '#000000', // Cor do text
     fontSize: 16,
@@ -215,5 +215,15 @@ export const styles = StyleSheet.create({
   drawerMenuItemText: {
     fontSize: 14,
     color: '#000',
+  },
+  botaoSelect: {
+    color: '#009F10',
+  },
+  bottombarSelect: {
+    backgroundColor: 'rgba(0, 159, 16, 0.08)',
+    aspectRatio: 1,
+    borderRadius: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

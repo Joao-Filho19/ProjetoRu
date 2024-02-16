@@ -13,6 +13,15 @@ export default StyleSheet.create({
     color: '#121212',
     fontWeight: '500',
   },
+  titleCadastro2: {
+    fontSize: 24,
+    marginTop: 40,
+    marginBottom: 100,
+    color: '#121212',
+    fontWeight: '500',
+    alignItems: 'center',
+    textAlign: 'center',
+  },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
