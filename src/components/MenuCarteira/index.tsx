@@ -7,9 +7,11 @@ import {
   ImageBackground,
 } from 'react-native';
 import Style from './style';
+import {useNavigation} from '@react-navigation/native';
 
 export default function MenuCarteira(props) {
   const isVisivel = props;
+  const navigation = useNavigation();
 
   if (!isVisivel) {
     return null;
@@ -38,7 +40,12 @@ export default function MenuCarteira(props) {
         }}>
         <View style={Style.modalContainer}>
           <View style={Style.modalContent}>
-            <TouchableOpacity style={Style.menuButton} onPress={toggleMenu}>
+            <TouchableOpacity
+              style={Style.menuButton}
+              onPress={() => {
+                toggleMenu();
+                navigation.navigate('UploadCarteira');
+              }}>
               <View style={Style.menuItemContainer}>
                 <ImageBackground
                   source={require('../../assets/uploadarqu.png')}
@@ -48,7 +55,12 @@ export default function MenuCarteira(props) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={Style.menuButton} onPress={toggleMenu}>
+            <TouchableOpacity
+              style={Style.menuButton}
+              onPress={() => {
+                toggleMenu();
+                navigation.navigate('UploadCarteira');
+              }}>
               <View style={Style.menuItemContainer}>
                 <ImageBackground
                   source={require('../../assets/img/excluir.png')}

@@ -351,7 +351,7 @@ export default function Cardapio() {
           <View style={styles.bottomIconContainer}>
             <BotaoDoIcon
               texto="Carteira"
-              page="UploadCarteira"
+              page="Carteira"
               imgIcon={require('../../assets/img/id.png')}
             />
           </View>

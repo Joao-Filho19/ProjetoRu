@@ -1,8 +1,12 @@
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 import Style from './style';
+import {useRoute} from '@react-navigation/native';
 
 export default function Carteira() {
+  const route = useRoute();
+  const imageUri = route.params?.imageUri;
+
   return (
     <View style={Style.container}>
       <View style={Style.containerTitulo}>
@@ -17,7 +21,9 @@ export default function Carteira() {
           <Text style={Style.textoNormal}>Carteira do Estudante 2024</Text>
         </View>
       </View>
-      <View style={Style.bordaUpload} />
+      {imageUri ? (
+        <Image source={{uri: imageUri}} style={Style.bordaUpload} />
+      ) : null}
     </View>
   );
 }

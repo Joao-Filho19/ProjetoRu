@@ -46,8 +46,26 @@ export default StyleSheet.create({
     borderRadius: 5,
     marginTop: 150,
     paddingTop: 40,
+    resizeMode: 'contain',
   },
   imgIcon: {
     marginBottom: 10,
+  },
+  botaoP: {
+    backgroundColor: '#37A433',
+    textAlign: 'center',
+    borderRadius: 8,
+    width: 145,
+    alignSelf: 'center',
+    marginBottom: 55,
+    marginTop: 3,
+    color: '#fff',
+    padding: 10,
+  },
+  textBotaoP: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: '500',
   },
 });

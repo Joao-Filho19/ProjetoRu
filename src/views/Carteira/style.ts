@@ -38,6 +38,7 @@ export default StyleSheet.create({
     borderColor: '#827F7F',
     borderStyle: 'solid',
     elevation: 1,
+    resizeMode: 'contain',
   },
   imgIcon: {
     marginBottom: 10,
